@@ -53,6 +53,7 @@ public class MyFirstHomework {
         List<WebElement> articleNamesPrint = browserWindow.findElements(ALL_ARTICLES_NAMES);
 
 
+
     }
 
 }
