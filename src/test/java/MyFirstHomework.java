@@ -16,7 +16,7 @@ public class MyFirstHomework {
     private final By ALL_COMMENTS_NAMES = By.xpath(".//div[@class = 'menu-items menu-items--top']/div[5]");
 
     @Test
-    public void firstHomework() {
+    public void firstHomeworkExerciseOne() {
         //WebDriver - browser window
         System.setProperty("webdriver.chrome.driver", "c://chromedriver.exe");
         WebDriver browserWindow = new ChromeDriver();
@@ -30,7 +30,7 @@ public class MyFirstHomework {
     }
 
     @Test
-    public void firstHomeWorkTvNet() {
+    public void firstHomeworkExerciseTwo() {
         //WebDriver - browser window
         System.setProperty("webdriver.chrome.driver", "c://chromedriver.exe");
         WebDriver browserWindow = new ChromeDriver();
