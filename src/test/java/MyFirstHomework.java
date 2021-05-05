@@ -43,23 +43,21 @@ public class MyFirstHomework {
         System.out.println(browserWindow.findElement(FIRST_ARTICLE_NAME).getText());
     }
 
-    @Test
-    public void allArticlesNamesPrint() {
-        //WebDriver - browser window
-        System.setProperty("webdriver.chrome.driver", "c://chromedriver.exe");
-        WebDriver browserWindow = new ChromeDriver();
-        browserWindow.manage().window().maximize();
-        browserWindow.get("http://tvnet.lv");
-
-        browserWindow.findElement(ACCEPT_COOKIES_BTN).click();
-        List<WebElement> articleNamesPrint = browserWindow.findElements(ALL_ARTICLES_NAMES);
-
-
-    }
+//    @Test
+//    public void allArticlesNamesPrint() {
+//        //WebDriver - browser window
+//        System.setProperty("webdriver.chrome.driver", "c://chromedriver.exe");
+//        WebDriver browserWindow = new ChromeDriver();
+//        browserWindow.manage().window().maximize();
+//        browserWindow.get("http://tvnet.lv");
+//
+//        browserWindow.findElement(ACCEPT_COOKIES_BTN).click();
+//        List<WebElement> articleNamesPrint = browserWindow.findElements(ALL_ARTICLES_NAMES);
+//
+//
+//    }
 
 }
-
-
 
 
 
