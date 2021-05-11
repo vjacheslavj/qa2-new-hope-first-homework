@@ -3,7 +3,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -60,7 +59,8 @@ public class MyFirstHomework {
 
         for (int i = 0; i < titles.size(); i++) {
             if (!titles.get(i).getText().isEmpty()) {
-                System.out.println(i + ": " + titles.get(i).getText().replaceAll("[0-9]", "" ).replaceAll("[()]", ""));
+                System.out.println(i + ": " + titles.get(i).getText()
+                        .replaceAll("[0-9]", "" ).replaceAll("[()]", ""));
             }
         }
     }
