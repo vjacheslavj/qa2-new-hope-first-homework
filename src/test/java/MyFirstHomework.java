@@ -40,23 +40,48 @@ public class MyFirstHomework {
         browserWindow.get("http://tvnet.lv");
 
         browserWindow.findElement(ACCEPT_COOKIES_BTN).click();
-        System.out.println(browserWindow.findElement(FIRST_ARTICLE_NAME).getText());
+        String firstArticleName = browserWindow.findElement(FIRST_ARTICLE_NAME).getText();
+        String firstArticleNameWithoutNumbers = firstArticleName
+                .replaceAll("[0-9]", "" ).replaceAll("[()]", "");
+        System.out.println(firstArticleNameWithoutNumbers);
+        browserWindow.quit();
     }
 
-//    @Test
-//    public void allArticlesNamesPrint() {
-//        //WebDriver - browser window
-//        System.setProperty("webdriver.chrome.driver", "c://chromedriver.exe");
-//        WebDriver browserWindow = new ChromeDriver();
-//        browserWindow.manage().window().maximize();
-//        browserWindow.get("http://tvnet.lv");
-//
-//        browserWindow.findElement(ACCEPT_COOKIES_BTN).click();
-//        List<WebElement> articleNamesPrint = browserWindow.findElements(ALL_ARTICLES_NAMES);
-//
-//
-//    }
+    @Test
+    public void allArticlesNamesPrintWithoutComments() {
+        //WebDriver - browser window
+        System.setProperty("webdriver.chrome.driver", "c://chromedriver.exe");
+        WebDriver browserWindow = new ChromeDriver();
+        browserWindow.manage().window().maximize();
+        browserWindow.get("http://tvnet.lv");
 
+        browserWindow.findElement(ACCEPT_COOKIES_BTN).click();
+        List<WebElement> titles = browserWindow.findElements(ALL_ARTICLES_NAMES);
+
+        for (int i = 0; i < titles.size(); i++) {
+            if (!titles.get(i).getText().isEmpty()) {
+                System.out.println(i + ": " + titles.get(i).getText().replaceAll("[0-9]", "" ).replaceAll("[()]", ""));
+            }
+        }
+    }
+
+    @Test
+    public void allArticlesNamesPrint() {
+        //WebDriver - browser window
+        System.setProperty("webdriver.chrome.driver", "c://chromedriver.exe");
+        WebDriver browserWindow = new ChromeDriver();
+        browserWindow.manage().window().maximize();
+        browserWindow.get("http://tvnet.lv");
+
+        browserWindow.findElement(ACCEPT_COOKIES_BTN).click();
+        List<WebElement> titles = browserWindow.findElements(ALL_ARTICLES_NAMES);
+
+        for (int i = 0; i < titles.size(); i++) {
+            if (!titles.get(i).getText().isEmpty()) {
+                System.out.println(i + ": " + titles.get(i).getText());
+            }
+        }
+    }
 }
 
 
