@@ -12,19 +12,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class DelfiArticleCommentsTest2 {
-    private final By ACCEPT_COOKIE_BTN = By.xpath(".//button[@mode = 'primary']");
-    private final By HOME_PAGE_TITLE = By.xpath(".//h1[contains(@class, 'headline__title')]");
-    private final By HOME_PAGE_COMMENTS = By.xpath(".//a[contains(@class, 'comment-count')]");
-    private final By HOME_PAGE_ARTICLE = By.tagName("article");
+public class TvNetArticleCommentsTest {
+    private final By ACCEPT_COOKIE_BTN = By.xpath("");
+    private final By HOME_PAGE_TITLE = By.xpath("");
+    private final By HOME_PAGE_COMMENTS = By.xpath("");
+    private final By HOME_PAGE_ARTICLE = By.tagName("");
 
-    private final By ARTICLE_PAGE_TITLE = By.xpath(".//h1[contains(@class, 'text-size-md-30')]");
-    private final By ARTICLE_PAGE_COMMENTS = By.xpath(".//a[contains(@class, 'text-size-md-28')]");
-    private final By ARTICLE_PAGE_COMMENTS_BTN = By.xpath(".//a[contains(@class, 'text-size-19')]");
+    private final By ARTICLE_PAGE_TITLE = By.xpath("");
+    private final By ARTICLE_PAGE_COMMENTS = By.xpath("");
+    private final By ARTICLE_PAGE_COMMENTS_BTN = By.xpath("");
 
-    private final By COMMENT_PAGE_TITLE = By.xpath(".//h1[@class = 'article-title']");
-    private final By COMMENT_REGISTRATED_USERS_PAGE_COMMENTS = By.xpath(".//li[@class = 'as-link show-reg']/span/span");
-    private final By COMMENT_ANONIM_USERS_PAGE_COMMENTS = By.xpath(".//li[@class = 'as-link is-active show-anon']/span/span");
+    private final By COMMENT_PAGE_TITLE = By.xpath("");
+    private final By COMMENT_REGISTRATED_USERS_PAGE_COMMENTS = By.xpath("");
+    private final By COMMENT_ANONIM_USERS_PAGE_COMMENTS = By.xpath("");
 
     private final Logger LOGGER = LogManager.getLogger(DelfiArticleCommentsTest2.class);
 
@@ -74,13 +74,11 @@ public class DelfiArticleCommentsTest2 {
 
         LOGGER.info("Opening comments page");
         driver.findElement(ARTICLE_PAGE_COMMENTS_BTN).click();
-
         //-------------------------COMMENTS PAGE---------------------------------------------------------
         LOGGER.info("Getting article title and comments count");
         String commentPageTitle = driver.findElement(COMMENT_PAGE_TITLE).getText();
         int commentPageRegistratedUsersCommentCount = getCommentsCount(COMMENT_REGISTRATED_USERS_PAGE_COMMENTS);
         int commentPageAnonimUsersCommentCount = getCommentsCount(COMMENT_ANONIM_USERS_PAGE_COMMENTS);
-        LOGGER.info("Title is: " + commentPageTitle + "and comments count is: " + commentPageRegistratedUsersCommentCount + commentPageAnonimUsersCommentCount);
 
         Assertions.assertEquals(homePageTitle, commentPageTitle + " ", "Wrong title!");
         Assertions.assertEquals(homePageCommentsCount, commentPageRegistratedUsersCommentCount + commentPageAnonimUsersCommentCount, "Wrong comments count!");
