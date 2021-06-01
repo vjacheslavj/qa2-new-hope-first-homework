@@ -77,6 +77,7 @@ public class TvNetArticleCommentsTest {
         LOGGER.info("Getting article title and comments count");
         String commentPageTitle = driver.findElement(COMMENT_PAGE_TITLE).getText();
         int commentPageCommentCount = getCommentsCount(COMMENT_PAGE_COMMENTS);
+        LOGGER.info("Title is: " + commentPageTitle + "and comments count is: " + commentPageCommentCount);
 
         Assertions.assertEquals(homePageTitle, commentPageTitle + " " + "(" + homePageCommentsCount + ")", "Wrong title!");
         Assertions.assertEquals(homePageCommentsCount, commentPageCommentCount, "Wrong comments count!");

@@ -53,7 +53,7 @@ public class DelfiArticleCommentsTest2 {
         driver.findElement(ACCEPT_COOKIE_BTN).click();
 
         List<WebElement> articles = driver.findElements(HOME_PAGE_ARTICLE);
-        WebElement article = articles.get(2);
+        WebElement article = articles.get(1);
 
         LOGGER.info("Getting article title and comments count");
         String homePageTitle = article.findElement(HOME_PAGE_TITLE).getText();
